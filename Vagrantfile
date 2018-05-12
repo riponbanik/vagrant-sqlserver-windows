@@ -32,7 +32,8 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
   end
 
-  config.vm.provision "shell", path: "install-sqlserver-prerequisites.ps1", privileged: true
+  #config.vm.provision "shell", path: "install-sqlserver-prerequisites.ps1", privileged: true
+  config.vm.provision "shell", path: "install-hotfix.ps1", privileged: true
   config.vm.provision :reload
   config.vm.provision "shell", path: "install-sqlserver-from-iso.ps1", privileged: true
 end

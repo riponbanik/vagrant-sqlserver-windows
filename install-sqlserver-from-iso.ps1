@@ -27,7 +27,7 @@ Write-Output "SQL Server: Running SQL Server installer"
 $setupDir = (Join-Path $isoMountDrive '\')
 Set-Location $setupDir
 ## In case of problems, add /INDICATEPROGRESS to see detailed setup log in vagrant host console
-.\setup.exe /QUIET /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL /INSTANCENAME=MSSQLSERVER /TCPENABLED=1 /SECURITYMODE=SQL /SQLSVCACCOUNT="NT Authority\System" /SAPWD="Password123" /SQLSYSADMINACCOUNTS=vagrant
+.\setup.exe /QUIET /IACCEPTSQLSERVERLICENSETERMS /ACTION=install /FEATURES=SQL,ADVANCEDANALYTICS,SQL_INST_MPY /INSTANCENAME=MSSQLSERVER /TCPENABLED=1 /SECURITYMODE=SQL /SQLSVCACCOUNT="NT Authority\System" /SAPWD="Password123" /SQLSYSADMINACCOUNTS=vagrant
 Write-Output "SQL Server: Running SQL Server installer - done"
 Set-Location ~
 
